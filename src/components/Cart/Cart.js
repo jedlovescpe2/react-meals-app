@@ -22,17 +22,28 @@ const Cart = props => {
             </li>) }
     </ul>;
 
-    return <div>
-        <Modal>{cartItems}
-            <span className={classes.total}>Total Amount</span> 
-            <span className={classes.total}>Total Amount</span> 
-            <div className={classes.actions}>
-                <button>Checkout</button>
-            </div>
+    return (
+      <div>
+        <Modal onClose={props.onClose}>
+          {cartItems}
+
+          <div className={classes.total}>
+            <span>Total Amount</span>
+            <span>35.62</span>
+          </div>
+
+          <div className={classes.actions}>
+            <button
+              className={classes.button}
+              onClick={props.onClose}
+            >
+              Cancel
+            </button>
+            <button className={classes.button}>Order</button>
+          </div>
         </Modal>
-        
-        
-    </div>;
+      </div>
+    );
 };
 
 export default Cart;
