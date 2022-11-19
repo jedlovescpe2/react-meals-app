@@ -1,20 +1,19 @@
 // Core
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, forwardRef } from "react";
 
 // UI
 import classes from "./Input.module.css";
 // Components
 
-const Input = (props) => {
-
-    const inputRef = useRef();
+const Input = forwardRef((props, ref) => {
+    // const inputRef = useRef();
 
     return (
         <div className={classes.input}>
             <label htmlFor={props.input.id}>{props.label}</label>
-            <input {...props.input}/>
+            <input ref={ref} {...props.input}/>
         </div>
     );
-};
+});
 
 export default Input;

@@ -1,9 +1,10 @@
 import { useContext, useState, createContext } from "react";
 
-createContext({
+const CartContext = createContext({
   items: [],
   totalAmount: 0,
   addItem: (item) => {},
+  removeItem: (id) => {},
 });
 
-const CartContext = (props) => {};
+export default CartContext;
